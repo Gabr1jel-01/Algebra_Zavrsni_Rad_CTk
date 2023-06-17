@@ -27,7 +27,7 @@ canvas_for_back_image = ctk.CTkCanvas(window,
                                       highlightthickness=0
                                       )
 
-img= ImageTk.PhotoImage(Image.open("pictures/ada.jpg"))
+img= ImageTk.PhotoImage(Image.open("pictures/rsz_11modern.jpg"))
 
 canvas_for_back_image.create_image(0,0,anchor='nw',image=img)
 
