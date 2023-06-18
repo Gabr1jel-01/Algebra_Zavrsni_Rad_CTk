@@ -1,1 +1,0 @@
-window.wm_attributes('-transparentcolor','black')
