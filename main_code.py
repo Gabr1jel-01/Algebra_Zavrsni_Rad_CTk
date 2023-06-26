@@ -33,8 +33,9 @@ canvas_for_back_image.pack(expand=True, fill='both')
 
 
 person_at_table_img = ImageTk.PhotoImage(Image.open("pictures/vector.png"))
-canvas_for_back_image.create_image(150,500,anchor='w',image=person_at_table_img)
-
+avatar_image = ImageTk.PhotoImage(Image.open("pictures/hyy.png"))
+canvas_for_back_image.create_image(150,600,anchor='w',image=person_at_table_img)
+canvas_for_back_image.create_image(905,120,anchor='w',image=avatar_image)
 
 
 """
@@ -62,13 +63,22 @@ cursor.execute('''
                 
 #label
 sign_up_label_big = ctk.CTkLabel(window,
-                            text="Prijava",
-                            font=('Calisto MT', 40),
+                            text="Your app",
+                            font=('Verdana', 50),
                             fg_color="#e6e6fa",
                             text_color="#000000"
                             )
 #sign_up_label.configure(background="#4c5578")
-sign_up_label_big.place(relx=0.67,rely=0.25)
+sign_up_label_big.place(relx=0.64,rely=0.25)
+
+welcome_label = ctk.CTkLabel(window,
+                            text="Welcome",
+                            font=('Verdana Pro', 65),
+                            fg_color="#e6e6fa",
+                            text_color="#000000"
+                            )
+welcome_label.place(relx=0.10,rely=0.13)
+
 
 #region FUNKCIJE
 def sign_me_in_action():
@@ -97,8 +107,8 @@ def sign_me_in_action():
 #endregion
 
 username_label = ctk.CTkLabel(window,
-                            text="User name:",
-                            font=('Calisto MT', 25),
+                            text="Username:",
+                            font=('Verdana', 25),
                             fg_color="#e6e6fa",
                             text_color="#000000"
                             )
@@ -116,7 +126,7 @@ username_entry_box.place(relx=0.59, rely=0.48)
 
 username_label = ctk.CTkLabel(window,
                             text="Password:",
-                            font=('Calisto MT', 25),
+                            font=('Verdana', 25),
                             fg_color="#e6e6fa",
                             text_color="#000000"
                             )
@@ -129,17 +139,18 @@ password_entry_box = ctk.CTkEntry(window,
                                 fg_color='white',
                                 bg_color='#e6e6fa',
                                 corner_radius=30,
-                                text_color='#000000'
+                                text_color='#000000',
+                                show="•"
                                 )
 password_entry_box.place(relx=0.59, rely=0.62)
 
 
 sign_me_in_button = ctk.CTkButton(window,
-                                text='Prijavi me',
+                                text='Sign up',
                                 text_color='#000000',
                                 width=200,
                                 height=50,
-                                font=('Arial Black',25),
+                                font=('Verdana',25),
                                 corner_radius=30,
                                 bg_color='#e6e6fa',
                                 fg_color='#98b4d4',
