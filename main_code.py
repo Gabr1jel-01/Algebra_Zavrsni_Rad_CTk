@@ -6,12 +6,8 @@ import pictures
 import sqlite3
 import bcrypt
 
-
-#class App(ctk.CTk):
-    #def __init__(self):
-        #super().__init__()
         
-        #configure window
+#configure window
 window = ctk.CTk()
 
 # visina i sirina prozora te fiksna pozicija gdje se prozor otvara na ekranu korisnika
@@ -30,6 +26,30 @@ window.config(background="#e6e6fa")
 window.resizable(False,False) 
 
 
+#region TabView
+
+tabview = ctk.CTkTabview(window)
+
+
+
+
+
+
+
+
+
+#endregion
+
+
+
+
+
+
+
+
+
+
+
 # kanvas za postavljanje slike koja se nalazi ispod svega
 canvas_for_back_image = ctk.CTkCanvas(window,                
                                       height=2000,
@@ -41,26 +61,11 @@ canvas_for_back_image = ctk.CTkCanvas(window,
 # prikazivanje tog kanvasa u glavnom prozoru aplikacije
 canvas_for_back_image.pack(expand=True, fill='both')
 
-
 #postavljanje dviju slika na kanvas u kojem je pozadina
 person_at_table_img = ImageTk.PhotoImage(Image.open("pictures/vector.png"))
 avatar_image = ImageTk.PhotoImage(Image.open("pictures/hyy.png"))
 canvas_for_back_image.create_image(150,600,anchor='w',image=person_at_table_img)
-canvas_for_back_image.create_image(905,120,anchor='w',image=avatar_image)
-
-
-"""
-canvas_over_back_image = ctk.CTkFrame(window,
-                                       height=500,
-                                       width=400,
-                                       corner_radius=40,
-                                       bg_color='#e6e6fa',
-                                       #fg_color='#e6e6fa'
-                                       )
-canvas_over_back_image.place(relx=0.5,rely=0.05)
-
-"""
-
+canvas_for_back_image.create_image(930,120,anchor='w',image=avatar_image)
 
 # konfiguriranje sql baze
 global sql_connection, cursor    
@@ -74,7 +79,7 @@ cursor.execute('''
                 
 # Labela
 sign_up_label_big = ctk.CTkLabel(window,
-                            text="Your app",
+                            text="PyFlora",
                             font=('Verdana', 50),
                             fg_color="#e6e6fa",
                             text_color="#000000"
@@ -91,7 +96,6 @@ welcome_label = ctk.CTkLabel(window,
                             )
 # postavljanje Labele na glavni prozor
 welcome_label.place(relx=0.10,rely=0.13)
-
 
 # region FUNKCIJE
 def sign_me_in_action():
@@ -150,7 +154,6 @@ username_label = ctk.CTkLabel(window,
 # postavljanje Labele na glavni prozor
 username_label.place(relx=0.6,rely=0.55)
 
-
 # Entry za unos podataka 
 password_entry_box = ctk.CTkEntry(window,
                                 width=250,
@@ -178,9 +181,6 @@ sign_me_in_button = ctk.CTkButton(window,
 
 # postavljanje Buttona na glavni prozor
 sign_me_in_button.place(relx=0.61, rely=0.8)
-
-
-
 
 # glavna petlja koja konstantno pokrece program tj program se ne gasi dok se ne stisne X
 window.mainloop()
