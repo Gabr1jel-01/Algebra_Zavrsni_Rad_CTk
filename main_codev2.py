@@ -7,7 +7,7 @@ import bcrypt
 from tkinter import ttk
 
 
-class App:
+class App(ctk.CTk):
     def __init__(self):
         # Configure window
         self.window = ctk.CTk()
@@ -168,15 +168,49 @@ class App:
             notebook.add(tab2, text="Posude")
             notebook.add(tab3,text="Postavke")
             
-            # Add content to the tabs
-            label1 = ctk.CTkLabel(tab1, text="Moj profil",font=("Verdana",50),text_color="black")
-            label1.pack()
 
             
             
             
+            def tab1_function():
+                
+                label1 = ctk.CTkLabel(tab1, text="Moj profil",font=("Verdana",50),text_color="black")
+                label1.pack(anchor="n")
+                
+                plant_frame1 = ctk.CTkFrame(tab2,width=100,height=100)
+                plant_frame2 = ctk.CTkFrame(tab2,width=10,height=10)
+                plant_frame3 = ctk.CTkFrame(tab2,width=10,height=10)
+                plant_frame4 = ctk.CTkFrame(tab2,width=10,height=10)
+                plant_frame5 = ctk.CTkFrame(tab2,width=10,height=10)
+                plant_frame6 = ctk.CTkFrame(tab2,width=10,height=10)
+                plant_frame7 = ctk.CTkFrame(tab2,width=10,height=10)
+                plant_frame8 = ctk.CTkFrame(tab2,width=10,height=10)
+                plant_frame9 = ctk.CTkFrame(tab2,width=10,height=10)
+                plant_frame10 = ctk.CTkFrame(tab2,width=100,height=100)
+                
+                plant_frame1.pack(padx=0,pady=25)
+                #frame2.pack(padx=,pady=)
+                #frame3.pack(padx=,pady=)
+                #frame4.pack(padx=,pady=)
+                #frame5.pack(padx=,pady=)
+                #frame6.pack(padx=,pady=)
+                #frame7.pack(padx=,pady=)
+                #frame8.pack(padx=,pady=)
+                #frame9.pack(padx=,pady=)
+                plant_frame10.pack()
+                
+                
+                
+                pass
+                
+            
+            
+            
+            # Add content to the tabs
+            tab1_function()
+            
             label2 = ctk.CTkLabel(tab2, text="Posude",font=("Verdana",50),text_color="black")
-            label2.pack()
+            label2.pack(anchor="n")
             
             label3 = ctk.CTkLabel(tab3, text="Postavke",font=("Verdana",50),text_color="black")
             label3.pack()
