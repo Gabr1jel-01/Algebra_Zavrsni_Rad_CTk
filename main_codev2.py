@@ -169,35 +169,23 @@ class App(ctk.CTk):
             notebook.add(tab3,text="Postavke")
             
 
-            
-            
-            
             def tab1_function():
                 
-                label1 = ctk.CTkLabel(tab1, text="Moj profil",font=("Verdana",50),text_color="black")
-                label1.pack(anchor="n")
+                moj_profil_label = ctk.CTkLabel(tab1, text="Moj profil",font=("Verdana",50),text_color="black")
+                moj_profil_label.pack(anchor="n")
                 
-                plant_frame1 = ctk.CTkFrame(tab2,width=100,height=100)
-                plant_frame2 = ctk.CTkFrame(tab2,width=10,height=10)
-                plant_frame3 = ctk.CTkFrame(tab2,width=10,height=10)
-                plant_frame4 = ctk.CTkFrame(tab2,width=10,height=10)
-                plant_frame5 = ctk.CTkFrame(tab2,width=10,height=10)
-                plant_frame6 = ctk.CTkFrame(tab2,width=10,height=10)
-                plant_frame7 = ctk.CTkFrame(tab2,width=10,height=10)
-                plant_frame8 = ctk.CTkFrame(tab2,width=10,height=10)
-                plant_frame9 = ctk.CTkFrame(tab2,width=10,height=10)
-                plant_frame10 = ctk.CTkFrame(tab2,width=100,height=100)
+                posude_label = ctk.CTkLabel(tab2, text="Posude",font=("Verdana",50),text_color="black")
+                posude_label.pack(anchor="n")
+            
+                postavke_label = ctk.CTkLabel(tab3, text="Postavke",font=("Verdana",50),text_color="black")
+                postavke_label.pack(anchor="n")
                 
-                plant_frame1.pack(padx=0,pady=25)
-                #frame2.pack(padx=,pady=)
-                #frame3.pack(padx=,pady=)
-                #frame4.pack(padx=,pady=)
-                #frame5.pack(padx=,pady=)
-                #frame6.pack(padx=,pady=)
-                #frame7.pack(padx=,pady=)
-                #frame8.pack(padx=,pady=)
-                #frame9.pack(padx=,pady=)
-                plant_frame10.pack()
+                # Label za posude po Posude
+                
+                
+                
+                
+                
                 
                 
                 
@@ -209,11 +197,7 @@ class App(ctk.CTk):
             # Add content to the tabs
             tab1_function()
             
-            label2 = ctk.CTkLabel(tab2, text="Posude",font=("Verdana",50),text_color="black")
-            label2.pack(anchor="n")
             
-            label3 = ctk.CTkLabel(tab3, text="Postavke",font=("Verdana",50),text_color="black")
-            label3.pack()
 
             # Pack the notebook
             notebook.pack(expand=True, fill='both')
@@ -265,8 +249,6 @@ class App(ctk.CTk):
         self.log_me_in_button.place(relx=0.61, rely=0.75)
 
     def sign_me_in_action(self):
-        
-        
         
         username = self.username_entry_box.get()
         password = self.password_entry_box.get()
